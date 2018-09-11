@@ -5,7 +5,7 @@ import { Textbox } from "./Components/Textbox";
 import {
   DisplayToday,
   DisplayTomorrow,
-  DisplayDayAfterTomorrow
+  DisplayFuture
 } from "./Components/Display";
 
 class App extends React.Component {
@@ -14,7 +14,7 @@ class App extends React.Component {
     this.state = {
       Today: [],
       Tomorrow: [],
-      Day_After_Tomorrow: [],
+      Future: [],
       username: "Hi Udhay"
     };
     this.updateEntry = this.updateEntry.bind(this);
@@ -30,9 +30,9 @@ class App extends React.Component {
       this.setState({
         Tomorrow: [...this.state.Tomorrow, term]
       });
-    } else if (day === "Day_After_Tomorrow") {
+    } else if (day === "Future") {
       this.setState({
-        Day_After_Tomorrow: [...this.state.Day_After_Tomorrow, term]
+        Future: [...this.state.Future, term]
       });
     }
   }
@@ -58,15 +58,15 @@ class App extends React.Component {
       this.setState({
         Tomorrow: filteredList
       });
-    } else if (day === "Day_After_Tomorrow") {
-      let filteredList = this.state.Day_After_Tomorrow.filter((elem, i) => {
+    } else if (day === "Future") {
+      let filteredList = this.state.Future.filter((elem, i) => {
         if (i === index) {
           return false;
         }
         return true;
       });
       this.setState({
-        Day_After_Tomorrow: filteredList
+        Future: filteredList
       });
     } else {
       console.log("Something went wrong when removing the item");
@@ -88,8 +88,8 @@ class App extends React.Component {
             items={this.state.Tomorrow}
             deleteItem={this.deleteEntry}
           />
-          <DisplayDayAfterTomorrow
-            items={this.state.Day_After_Tomorrow}
+          <DisplayFuture
+            items={this.state.Future}
             deleteItem={this.deleteEntry}
           />
         </div>

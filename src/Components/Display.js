@@ -20,11 +20,11 @@ export class DisplayTomorrow extends React.Component {
   }
 }
 
-export class DisplayDayAfterTomorrow extends React.Component {
+export class DisplayFuture extends React.Component {
   render() {
     return (
       <div>
-        <h2>DayAFterTomorrow</h2>
+        <h2>Future</h2>
       </div>
     );
   }
