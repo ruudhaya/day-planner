@@ -13,9 +13,8 @@ export class Textbox extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({
-      aim: e.target.value
-    });
+    console.log(e.target.value);
+    this.setState({ aim: e.target.value });
   }
 
   handleSelect(e) {
@@ -41,7 +40,7 @@ export class Textbox extends React.Component {
             <select
               value={this.state.day}
               id="day"
-              onChange={this.state.handleSelect}
+              onChange={this.handleSelect}
             >
               <option value="Today">Today</option>
               <option value="Tomorrow">Tomorrow</option>
