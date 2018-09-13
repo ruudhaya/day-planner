@@ -21,20 +21,23 @@ class App extends React.Component {
     this.deleteEntry = this.deleteEntry.bind(this);
   }
 
-  updateEntry(term, day) {
+  updateEntry(aim, day) {
+    console.log(this.state);
+    console.log(aim + " " + day);
     if (day === "Today") {
       this.setState({
-        Today: [...this.state.Today, term]
+        Today: [...this.state.Today, aim]
       });
     } else if (day === "Tomorrow") {
       this.setState({
-        Tomorrow: [...this.state.Tomorrow, term]
+        Tomorrow: [...this.state.Tomorrow, aim]
       });
     } else if (day === "Future") {
       this.setState({
-        Future: [...this.state.Future, term]
+        Future: [...this.state.Future, aim]
       });
     }
+    console.log(this.state);
   }
 
   deleteEntry(index, day) {
