@@ -1,5 +1,6 @@
 import React from "react";
 import SimpleStorage from "react-simple-storage";
+import hack from "hack";
 
 import { Header } from "./Components/Header";
 import { Textbox } from "./Components/Textbox";
@@ -79,7 +80,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="hack">
         <SimpleStorage parent={this} />
         <Header nam={this.state.username} />
         <Textbox updateEntry={this.updateEntry} />

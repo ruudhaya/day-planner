@@ -1,4 +1,5 @@
 import React from "react";
+import hack from "hack";
 
 export class Textbox extends React.Component {
   constructor(props) {
@@ -35,19 +36,20 @@ export class Textbox extends React.Component {
     return (
       <div className="container">
         <form className="form" onSubmit={this.handleSubmit}>
-          <fieldset>
+          <fieldset className="form-group form-warning">
             <label htmlFor="aim"> For Day:</label>
             <select
               value={this.state.day}
               id="day"
               onChange={this.handleSelect}
+              className="form-control"
             >
               <option value="Today">Today</option>
               <option value="Tomorrow">Tomorrow</option>
               <option value="Future">Future</option>
             </select>
           </fieldset>
-          <fieldset>
+          <fieldset className="form-group form-warning">
             <label> Your Goal : </label>
             <input
               id="aim"
@@ -55,9 +57,10 @@ export class Textbox extends React.Component {
               type="text"
               placeholder="Type your aim and add to list"
               onChange={this.handleChange}
+              className="form-control"
             />
           </fieldset>
-          <button>WILL DO</button>
+          <button className="btn btn-warning btn-ghost">WILL DO</button>
         </form>
         <h2>TextBox</h2>
         <hr />
